@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechnoSale.Core.Entities;
 
 namespace TechnoSale.Entities.Concrete
 {
-    class sepet_urun
+    public class sepet_urun : IEntity
     {
         public int sepet_id { get; set; }
         public int urun_id { get; set; }

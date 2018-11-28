@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnoSale.Core", "TechnoSale.Core\TechnoSale.Core.csproj", "{65D20F77-6193-465B-8178-EB8AAF7B4CA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnoSale.Core", "TechnoSale.Core\TechnoSale.Core.csproj", "{65D20F77-6193-465B-8178-EB8AAF7B4CA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnoSale.Entities", "TechnoSale.Entities\TechnoSale.Entities.csproj", "{50648B1B-D17C-45D0-A3EB-1964E145E12D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnoSale.Entities", "TechnoSale.Entities\TechnoSale.Entities.csproj", "{50648B1B-D17C-45D0-A3EB-1964E145E12D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnoSale.DataAccess", "TechnoSale.DataAccess\TechnoSale.DataAccess.csproj", "{CE7F5504-63BE-4C5C-A676-A61120882454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnoSale.DataAccess", "TechnoSale.DataAccess\TechnoSale.DataAccess.csproj", "{CE7F5504-63BE-4C5C-A676-A61120882454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnoSale.Business", "TechnoSale.Business\TechnoSale.Business.csproj", "{320891FF-60B3-4CF3-BCC1-1D93DCAAACAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnoSale.Business", "TechnoSale.Business\TechnoSale.Business.csproj", "{320891FF-60B3-4CF3-BCC1-1D93DCAAACAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnoSale.MvcWebUI", "TechnoSale.MvcWebUI\TechnoSale.MvcWebUI.csproj", "{9E426973-8803-4E61-B4A7-325A36A4BAEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnoSale.MvcWebUI", "TechnoSale.MvcWebUI\TechnoSale.MvcWebUI.csproj", "{9E426973-8803-4E61-B4A7-325A36A4BAEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

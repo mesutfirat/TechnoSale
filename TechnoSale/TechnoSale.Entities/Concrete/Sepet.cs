@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
+using TechnoSale.Core.Entities;
 
 namespace TechnoSale.Entities.Concrete
 {
-    class Sepet
+    public class Sepet : IEntity
     {
         public Sepet()
         {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TechnoSale.DataAccess
+namespace ClassLibrary1
 {
     public class Class1
     {
