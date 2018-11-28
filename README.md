@@ -1,0 +1,2 @@
+# TechnoSale
+teknoloji marketi
