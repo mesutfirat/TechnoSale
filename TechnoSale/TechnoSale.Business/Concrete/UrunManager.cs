@@ -21,7 +21,7 @@ namespace TechnoSale.Business.Concrete
 
         public void Delete(int urun_id)
         {
-            _urunDal.Delete(urun_id);
+            _urunDal.Delete(new Urun {urun_id = urun_id });
         }
 
         public List<Urun> GetAll()

@@ -6,5 +6,9 @@ namespace TechnoSale.DataAccess.Concrete.EntityFramework
 {
     public class EfUrunDal : EfEntityRepositoryBase<Urun, TechnoSaleContext>, IUrunDal
     {
+        public void Delete(int urun_id)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

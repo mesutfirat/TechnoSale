@@ -1,0 +1,34 @@
+﻿@model TechnoSale.MvcWebUI.Models.UrunListViewModel
+
+@{
+	Layout=null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+	<div>
+        <table>
+            <tr>
+                <td>Urun Adi</td>
+                <td>Urun Detay</td>
+                <td>Urun Marka</td>
+                <td>Urun Fiyat</td>
+            </tr>
+            @foreach (var urun in Model.Uruns)
+            {
+                <tr>
+                    <td>@urun.urun_adi</td>
+                    <td>@urun.urun_detay</td>
+                    <td>@urun.urun_marka</td>
+                    <td>@urun.urun_fiyat</td>
+                </tr>
+            }
+        </table>
+	</div>
+</body>
+</html>

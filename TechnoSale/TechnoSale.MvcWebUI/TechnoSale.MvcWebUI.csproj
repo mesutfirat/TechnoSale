@@ -5,11 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Urun\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Urun\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TechnoSale.Business\TechnoSale.Business.csproj" />
+    <ProjectReference Include="..\TechnoSale.Core\TechnoSale.Core.csproj" />
+    <ProjectReference Include="..\TechnoSale.Entities\TechnoSale.Entities.csproj" />
   </ItemGroup>
 
 </Project>

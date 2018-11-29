@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using TechnoSale.Business.Abstract;
+using TechnoSale.Business.Concrete;
+using TechnoSale.DataAccess.Abstract;
+using TechnoSale.DataAccess.Concrete.EntityFramework;
 
 namespace TechnoSale.MvcWebUI
 {
@@ -15,6 +19,11 @@ namespace TechnoSale.MvcWebUI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IUrunService, UrunManager>();
+            services.AddScoped<IUrunDal, EfUrunDal>();
+            services.AddScoped<IKampanyaService, KampanyaManager>();
+            services.AddScoped<IKampanyaDal, EfKampanyaDal>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,10 +34,7 @@ namespace TechnoSale.MvcWebUI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

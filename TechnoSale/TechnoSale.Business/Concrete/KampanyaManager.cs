@@ -21,7 +21,7 @@ namespace TechnoSale.Business.Concrete
 
         public void Delete(int kampanya_id)
         {
-            _kampanyaDal.Delete(kampanya_id);
+            _kampanyaDal.Delete(new Kampanya {kampanya_id = kampanya_id });
         }
 
         public List<Kampanya> GetAll()
