@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TechnoSale.Core\TechnoSale.Core.csproj" />
+    <ProjectReference Include="..\TechnoSale.DataAccess\TechnoSale.DataAccess.csproj" />
+    <ProjectReference Include="..\TechnoSale.Entities\TechnoSale.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
