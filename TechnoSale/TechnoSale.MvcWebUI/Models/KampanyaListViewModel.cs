@@ -8,6 +8,6 @@ namespace TechnoSale.MvcWebUI.Models
 {
     public class KampanyaListViewModel
     {
-        public List<Kampanya> Kampanyas { get; internal set; }
+        public List<Kampanya> Kampanyalar { get; internal set; }
     }
 }

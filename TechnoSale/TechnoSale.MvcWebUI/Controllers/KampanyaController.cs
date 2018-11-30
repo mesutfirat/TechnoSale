@@ -21,7 +21,7 @@ namespace TechnoSale.MvcWebUI.Controllers
             var kampanya = _kampanyaService.GetAll();
             KampanyaListViewModel model = new KampanyaListViewModel
             {
-                Kampanyas = kampanya
+                Kampanyalar = kampanya
 
             };
 

@@ -10,7 +10,7 @@ namespace TechnoSale.DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localhost);Database=alisveris; Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=localhost;Database=alisveris; Trusted_Connection=true");
         }
 
         public DbSet<Kampanya> Kampanyas { get; set; }
@@ -23,7 +23,7 @@ namespace TechnoSale.DataAccess.Concrete.EntityFramework
         public DbSet<sepet_urun> sepet_uruns { get; set; }
         public DbSet<Siparis> Sipariss { get; set; }
         public DbSet<siparis_urun> siparis_uruns { get; set; }
-        public DbSet<Urun> Uruns { get; set; }
+        public DbSet<Urun> Urun { get; set; }
         public DbSet<urun_ozellik> urun_ozelliks { get; set; }
         public DbSet<Urun_Resim> Urun_Resims { get; set; }
         public DbSet<User> Users { get; set; }

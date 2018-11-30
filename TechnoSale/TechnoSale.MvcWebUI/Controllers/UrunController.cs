@@ -21,7 +21,7 @@ namespace TechnoSale.MvcWebUI.Controllers
             var urun = _urunService.GetAll();
             UrunListViewModel model = new UrunListViewModel
             {
-                Uruns = urun
+                Urunler = urun
 
             };
 

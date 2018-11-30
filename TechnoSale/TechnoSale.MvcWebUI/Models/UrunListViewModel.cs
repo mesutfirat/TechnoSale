@@ -8,6 +8,6 @@ namespace TechnoSale.MvcWebUI.Models
 {
     public class UrunListViewModel
     {
-        public List<Urun> Uruns { get; internal set; }
+        public List<Urun> Urunler { get; internal set; }
     }
 }
