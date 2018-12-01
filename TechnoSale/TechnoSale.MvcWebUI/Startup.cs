@@ -10,6 +10,7 @@ using TechnoSale.Business.Abstract;
 using TechnoSale.Business.Concrete;
 using TechnoSale.DataAccess.Abstract;
 using TechnoSale.DataAccess.Concrete.EntityFramework;
+using TechnoSale.MvcWebUI.Middlewares;
 
 namespace TechnoSale.MvcWebUI
 {
@@ -34,6 +35,8 @@ namespace TechnoSale.MvcWebUI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseFileServer();
+            app.UseNodeModules(env.ContentRootPath);
             app.UseMvcWithDefaultRoute();
         }
     }
