@@ -1,0 +1,9 @@
+﻿@model TechnoSale.MvcWebUI.Models.KategoriListViewModel
+
+<div class="list-group">
+    @foreach (var kategori in Model.Kategoriler)
+    {
+        <a href="#" class="list-group-item">@kategori.kategori_adi</a>
+    }
+
+</div>
