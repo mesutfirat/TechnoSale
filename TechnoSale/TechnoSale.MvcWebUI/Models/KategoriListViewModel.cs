@@ -9,5 +9,7 @@ namespace TechnoSale.MvcWebUI.Models
     public class KategoriListViewModel
     {
         public List<Kategori> Kategoriler { get; internal set; }
+
+        public int CurrentKategori { get; internal set; }
     }
 }

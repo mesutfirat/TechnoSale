@@ -32,7 +32,7 @@ namespace TechnoSale.Business.Concrete
 
         public List<Urun> GetByKategori(int kategori_id)
         {
-            return _urunDal.GetList(u => u.kategori_id == kategori_id);
+            return _urunDal.GetList(u => u.kategori_id == kategori_id || kategori_id==0);
         }
 
         

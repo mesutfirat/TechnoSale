@@ -3,7 +3,12 @@
 <div class="list-group">
     @foreach (var kategori in Model.Kategoriler)
     {
-        <a href="#" class="list-group-item">@kategori.kategori_adi</a>
+        var css = "list-group-item";
+        if (kategori.kategori_id==Model.CurrentKategori)
+        {
+            css += " active";
+        }
+        <a href="/urun/index?kategori=@kategori.kategori_id" class="@css">@kategori.kategori_adi</a>
     }
 
 </div>

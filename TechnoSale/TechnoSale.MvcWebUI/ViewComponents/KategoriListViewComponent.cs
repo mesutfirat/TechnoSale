@@ -22,7 +22,8 @@ namespace TechnoSale.MvcWebUI.ViewComponents
         {
             var model = new KategoriListViewModel()
             {
-                Kategoriler = _kategoriService.GetAll()
+                Kategoriler = _kategoriService.GetAll(),
+                CurrentKategori = Convert.ToInt32(HttpContext.Request.Query["kategori"])
             };
             return View(model);
         }

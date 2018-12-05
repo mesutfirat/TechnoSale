@@ -1,24 +1,34 @@
 ﻿@model TechnoSale.MvcWebUI.Models.UrunListViewModel
-
+@addTagHelper "*,Microsoft.AspNetCore.Mvc.TagHelpers"
+@addTagHelper "*,TechnoSale.MvcWebUI"
 @{
     Layout = "~/Views/_Layout.cshtml";
 }
 	<div>
         <table class="table table-responsive ">
             <tr>
-                <td>Urun Adi            </td>
-                <td>Urun Detay          </td>
-                <td>Urun Marka          </td>
-                <td>Urun Fiyat          </td>
+                <td>ÜRÜN ADI</td>
+                <td>ÜRÜN DETAYI</td>
+                <td>ÜRÜN MARKASI</td>
+                <td>ÜRÜN STOĞU</td>
+                <td>ÜRÜN FİYATI</td>
+                <td>ÜRÜN TARİHİ</td>
             </tr>
             @foreach (var urun in Model.Urunler)
             {
-                <tr>
-                    <td>@urun.urun_adi</td>
-                    <td>@urun.urun_detay</td>
-                    <td>@urun.urun_marka</td>
-                    <td>@urun.urun_fiyat</td>
-                </tr>
+            <tr>
+                <td>@urun.urun_adi</td>
+                <td>@urun.urun_detay</td>
+                <td>@urun.urun_marka</td>
+                <td>@urun.urun_stok</td>
+                <td>@urun.urun_fiyat</td>
+                <td>@urun.urun_tarih</td>
+            </tr>
             }
         </table>
 	</div>
+<urun-list-pager 
+current-kategori="@Model.CurrentKategori" 
+current-page="@Model.CurrentPage" 
+page-count="@Model.PageCount" 
+page-size="@Model.PageSize"></urun-list-pager>

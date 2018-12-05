@@ -16,12 +16,17 @@ namespace TechnoSale.MvcWebUI.Controllers
         {
             _urunService = urunService;
         }
-        public ActionResult Index()
+        public ActionResult Index(int page=1, int kategori=0)
         {
-            var urun = _urunService.GetAll();
+            int pageSize = 3;
+            var urun = _urunService.GetByKategori(kategori);
             UrunListViewModel model = new UrunListViewModel
             {
-                Urunler = urun
+                Urunler = urun.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                PageCount = (int)Math.Ceiling(urun.Count / (double)pageSize),
+                PageSize = pageSize,
+                CurrentKategori = kategori,
+                CurrentPage = page
 
             };
 
