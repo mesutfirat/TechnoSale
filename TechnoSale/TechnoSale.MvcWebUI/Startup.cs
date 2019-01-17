@@ -11,6 +11,7 @@ using TechnoSale.Business.Concrete;
 using TechnoSale.DataAccess.Abstract;
 using TechnoSale.DataAccess.Concrete.EntityFramework;
 using TechnoSale.MvcWebUI.Middlewares;
+using TechnoSale.MvcWebUI.Services;
 
 namespace TechnoSale.MvcWebUI
 {
@@ -26,6 +27,11 @@ namespace TechnoSale.MvcWebUI
             services.AddScoped<IKampanyaDal, EfKampanyaDal>();
             services.AddScoped<IKategoriService, KategoriManager>();
             services.AddScoped<IKategoriDal, EfKategoriDal>();
+            services.AddSingleton<ICartSessionService, CartSessionService>();
+            services.AddSingleton<ICartService, CartService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSession();
+            services.AddDistributedMemoryCache();
             services.AddMvc();
         }
 
@@ -39,6 +45,7 @@ namespace TechnoSale.MvcWebUI
 
             app.UseFileServer();
             app.UseNodeModules(env.ContentRootPath);
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
         }
     }

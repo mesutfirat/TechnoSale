@@ -12,6 +12,6 @@ namespace TechnoSale.Business.Abstract
         void Add(Urun urun);
         void Update(Urun urun);
         void Delete(int urun_id);
-
+        Urun GetById(int urun_id);
     }
 }

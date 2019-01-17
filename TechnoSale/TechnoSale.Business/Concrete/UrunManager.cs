@@ -40,5 +40,10 @@ namespace TechnoSale.Business.Concrete
         {
             _urunDal.Update(urun);
         }
+
+        public Urun GetById(int urun_id)
+        {
+           return _urunDal.Get(p => p.urun_id == urun_id);
+        }
     }
 }

@@ -13,6 +13,7 @@
                 <td>ÜRÜN STOĞU</td>
                 <td>ÜRÜN FİYATI</td>
                 <td>ÜRÜN TARİHİ</td>
+                <td></td>
             </tr>
             @foreach (var urun in Model.Urunler)
             {
@@ -23,6 +24,7 @@
                 <td>@urun.urun_stok</td>
                 <td>@urun.urun_fiyat</td>
                 <td>@urun.urun_tarih</td>
+                <td><a class="btn btn-xs btn-success" asp-controller="Cart" asp-action="AddToCart" asp-route-urun_id="@urun.urun_id">sepete ekle</a></td>
             </tr>
             }
         </table>

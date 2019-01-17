@@ -1,0 +1,55 @@
+﻿@model TechnoSale.MvcWebUI.Models.CartListViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<h2>Sepetiniz</h2>
+<table class="table">
+    <tr>
+        <td>Urun Adı</td>
+        <td>Urun Fiyatı</td>
+        <td>Stoktaki Birimler</td>
+        <td>Toplam</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model.Cart.CartLines)
+    {
+        <tr>
+            <td>@item.Urun.urun_adi</td>
+            <td>@item.Urun.urun_fiyat</td>
+            <td>@item.Urun.urun_stok</td>
+            <td>@item.urun_adet</td>
+            <td class="text-right"><a class="btn btn-xs btn-danger" asp-controller="Cart" asp-action="Remove" asp-route-productId="@item.Urun.urun_id"><span class="glyphicon glyphicon-remove"></span> Ürünü sepetten kaldır</a></td>
+        </tr>
+    }
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <h3>Total</h3>
+        </td>
+        <td class="text-right">
+            <h3>
+                <strong>@Model.Cart.Total</strong>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>
+            <a asp-controller="Urun" asp-action="Index" class="btn btn-xs btn-default">
+                <span class="glyphicon glyphicon-shopping-cart"></span> Alışverişe devam et
+            </a>
+        </td>
+        <td class="text-right">
+            <a asp-controller="Cart" asp-action="Complete" class="btn btn-xs btn-success">
+                <span class="glyphicon glyphicon-shopping-play"></span> Alışverişi tamamla
+            </a>
+        </td>
+    </tr>
+</table>
+
