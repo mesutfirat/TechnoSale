@@ -19,7 +19,7 @@ namespace TechnoSale.MvcWebUI.Controllers
         }
         public ActionResult Index(int page=1, int kategori=0)
         {
-            int pageSize = 3;
+            int pageSize = 5;
             var urun = _urunService.GetByKategori(kategori);
             UrunListViewModel model = new UrunListViewModel
             {

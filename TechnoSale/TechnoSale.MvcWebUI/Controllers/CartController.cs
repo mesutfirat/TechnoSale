@@ -43,5 +43,14 @@ namespace TechnoSale.MvcWebUI.Controllers
             };
             return View(cartListViewModel);
         }
+
+        public ActionResult Remove(int urun_id)
+        {
+            var cart = _cartSessionService.GetCart();
+            _cartService.RemoveFromCard(cart,urun_id);
+            _cartSessionService.SetCart(cart);
+            TempData.Add("message", String.Format("Ürününüz başarıyla sepetten kaldırıldı!!"));
+            return RedirectToAction("List");
+        }
     }
 }

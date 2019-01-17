@@ -20,7 +20,7 @@
             <td>@item.Urun.urun_fiyat</td>
             <td>@item.Urun.urun_stok</td>
             <td>@item.urun_adet</td>
-            <td class="text-right"><a class="btn btn-xs btn-danger" asp-controller="Cart" asp-action="Remove" asp-route-productId="@item.Urun.urun_id"><span class="glyphicon glyphicon-remove"></span> Ürünü sepetten kaldır</a></td>
+            <td class="text-right"><a class="btn btn-xs btn-danger" asp-controller="Cart" asp-action="Remove" asp-route-urun_id="@item.Urun.urun_id"><span class="glyphicon glyphicon-remove"></span> Ürünü sepetten kaldır</a></td>
         </tr>
     }
     <tr>
