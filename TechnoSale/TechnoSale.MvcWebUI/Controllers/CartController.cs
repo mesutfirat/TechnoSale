@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TechnoSale.Business.Abstract;
+using TechnoSale.Entities.Concrete;
 using TechnoSale.MvcWebUI.Models;
 using TechnoSale.MvcWebUI.Services;
 
@@ -51,6 +52,26 @@ namespace TechnoSale.MvcWebUI.Controllers
             _cartSessionService.SetCart(cart);
             TempData.Add("message", String.Format("Ürününüz başarıyla sepetten kaldırıldı!!"));
             return RedirectToAction("List");
+        }
+
+        public IActionResult Complete()
+        {
+            var shippingDetailsViewModel = new ShippingDetailsViewModel
+            {
+                ShippingDetails = new ShippingDetails()
+            };
+            return View(shippingDetailsViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Complete(ShippingDetails shippingDetails)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            TempData.Add("message",String.Format("Teşekkürler {0} {1}, Siparişiniz hazırlanıyor...",shippingDetails.FirstName,shippingDetails.LastName));
+            return View();
         }
     }
 }
