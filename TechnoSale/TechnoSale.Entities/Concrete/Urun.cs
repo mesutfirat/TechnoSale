@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TechnoSale.Core.Entities;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechnoSale.Entities.Concrete
 {
@@ -23,13 +24,20 @@ namespace TechnoSale.Entities.Concrete
 
         [Key]
         public int urun_id { get; set; }
+        [Required]
         public string urun_adi { get; set; }
+        [Required]
         public string urun_detay { get; set; }
+        [Required]
         public string urun_marka { get; set; }
+        [Required]
         public int urun_stok { get; set; }
+        [Required]
         public decimal urun_fiyat { get; set; }
         public int urun_puan { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime urun_tarih { get; set; }
+        [Required]
         public int kategori_id { get; set; }
         public virtual ICollection<Kampanya> Kampanya { get; set; }
         public virtual ICollection<sepet_urun> sepet_urun { get; set; }

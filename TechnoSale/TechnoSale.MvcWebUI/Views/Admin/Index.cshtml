@@ -1,0 +1,37 @@
+﻿@model TechnoSale.MvcWebUI.Models.UrunListViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Ürün Listesi</h2>
+
+<a class="btn btn-xs btn-success" asp-controller="Admin" asp-action="Add">Yeni Ürün Ekle</a>
+<div>
+    <table class="table table-responsive ">
+        <tr>
+            <td>ÜRÜN ADI</td>
+            <td>ÜRÜN DETAYI</td>
+            <td>ÜRÜN MARKASI</td>
+            <td>ÜRÜN STOĞU</td>
+            <td>ÜRÜN FİYATI</td>
+            <td>ÜRÜN TARİHİ</td>
+            <td></td>
+            <td></td>
+        </tr>
+        @foreach (var urun in Model.Urunler)
+        {
+        <tr>
+            <td>@urun.urun_adi</td>
+            <td>@urun.urun_detay</td>
+            <td>@urun.urun_marka</td>
+            <td>@urun.urun_stok</td>
+            <td>@urun.urun_fiyat</td>
+            <td>@urun.urun_tarih</td>
+            <td><a class="btn btn-xs btn-info" asp-controller="Admin" asp-action="Update" asp-route-urun_id="@urun.urun_id">Düzenle</a></td>
+            <td><a class="btn btn-xs btn-danger" asp-controller="Admin" asp-action="Delete" asp-route-urun_id="@urun.urun_id">Ürün Sil</a></td>
+        </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,49 @@
+﻿@using System.Threading.Tasks
+@using TechnoSale.MvcWebUI.Models
+@model TechnoSale.MvcWebUI.Models.UrunAddViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Ürün Ekle</h2>
+
+<form asp-controller="Admin" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Urun.urun_adi"></label>
+        <input asp-for="Urun.urun_adi" class="form-control" placeholder="Ürün Adı" />
+        <span asp-validation-for="Urun.urun_adi"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Urun.urun_detay"></label>
+        <input asp-for="Urun.urun_detay" class="form-control" placeholder="Ürün Detayı" />
+        <span asp-validation-for="Urun.urun_detay"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Urun.urun_marka"></label>
+        <input asp-for="Urun.urun_marka" class="form-control" placeholder="Ürün Markası" />
+        <span asp-validation-for="Urun.urun_marka"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Urun.urun_stok"></label>
+        <input asp-for="Urun.urun_stok" class="form-control" placeholder="Ürün Stoğu" />
+        <span asp-validation-for="Urun.urun_stok"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Urun.urun_fiyat"></label>
+        <input asp-for="Urun.urun_fiyat" class="form-control" placeholder="Ürün Fiyatı" />
+        <span asp-validation-for="Urun.urun_fiyat"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Urun.urun_puan"></label>
+        <input asp-for="Urun.urun_puan" class="form-control" placeholder="Ürün Puanı" />
+        <span asp-validation-for="Urun.urun_puan"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Urun.kategori_id"></label>
+        <input asp-for="Urun.kategori_id" class="form-control" placeholder="Kategori ID" />
+        <span asp-validation-for="Urun.kategori_id"></span>
+    </div>
+    <input type="submit" value="Ürün Ekle" class="btn btn-xs btn-success" />
+</form>

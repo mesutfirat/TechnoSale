@@ -29,4 +29,10 @@
     <ProjectReference Include="..\TechnoSale.Entities\TechnoSale.Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\_AdminLayout.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>
