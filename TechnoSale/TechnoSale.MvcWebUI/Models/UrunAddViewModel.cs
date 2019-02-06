@@ -10,5 +10,6 @@ namespace TechnoSale.MvcWebUI.Models
     public class UrunAddViewModel
     {
         public Urun Urun { get; set; }
+        public List<Kategori> Kategoriler { get; internal set; }
     }
 }

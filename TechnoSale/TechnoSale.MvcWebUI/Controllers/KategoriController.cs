@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TechnoSale.Business.Abstract;
+using TechnoSale.Entities.Concrete;
 using TechnoSale.MvcWebUI.Models;
 
 namespace TechnoSale.MvcWebUI.Controllers

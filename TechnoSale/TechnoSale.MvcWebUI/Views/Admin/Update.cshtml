@@ -1,15 +1,13 @@
-﻿@using System.Threading.Tasks
-@using TechnoSale.MvcWebUI.Models
-@model TechnoSale.MvcWebUI.Models.UrunAddViewModel
+﻿@model TechnoSale.MvcWebUI.Models.UrunUpdateViewModel
 
 @{
     ViewBag.Title = "title";
     Layout = "~/Views/_AdminLayout.cshtml";
 }
 
-<h2>Yeni Ürün Ekle</h2>
+<h2>Ürün Güncelle</h2>
 
-<form asp-controller="Admin" asp-action="Add" method="post">
+<form asp-controller="Admin" asp-action="Update" method="post">
     <div class="form-group">
         <label asp-for="Urun.urun_adi"></label>
         <input asp-for="Urun.urun_adi" class="form-control" placeholder="Ürün Adı" />
@@ -45,5 +43,6 @@
         <select asp-for="Urun.kategori_id" class="form-control" asp-items="@(new SelectList(Model.Kategoriler,"kategori_id","kategori_adi"))"></select>
         <span asp-validation-for="Urun.kategori_id"></span>
     </div>
-    <input type="submit" value="Ürün Ekle" class="btn btn-xs btn-success" />
+    <input type="hidden" asp-for="Urun.urun_id"/>
+    <input type="submit" value="Ürünü Güncelle" class="btn btn-xs btn-success" />
 </form>

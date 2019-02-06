@@ -33,5 +33,6 @@ namespace TechnoSale.Business.Concrete
         {
             _kategoriDal.Update(kategori);
         }
+
     }
 }
