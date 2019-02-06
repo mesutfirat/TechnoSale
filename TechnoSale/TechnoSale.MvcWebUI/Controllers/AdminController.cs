@@ -73,5 +73,15 @@ namespace TechnoSale.MvcWebUI.Controllers
 
             return RedirectToAction("Update");
         }
+
+        public ActionResult Delete(int urun_id)
+        {
+            var urun = _urunService.GetById(urun_id);
+            _urunService.Delete(urun_id);
+            
+            TempData.Add("message", String.Format("{0}, Ürünü Başarıyla Silindi", urun.urun_adi));
+
+            return RedirectToAction("Index");
+        }
     }
 }
