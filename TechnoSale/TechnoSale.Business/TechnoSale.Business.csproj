@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.5.1" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TechnoSale.Core\TechnoSale.Core.csproj" />
     <ProjectReference Include="..\TechnoSale.DataAccess\TechnoSale.DataAccess.csproj" />
     <ProjectReference Include="..\TechnoSale.Entities\TechnoSale.Entities.csproj" />

@@ -5,11 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using TechnoSale.Business.Abstract;
 using TechnoSale.Business.Concrete;
 using TechnoSale.DataAccess.Abstract;
 using TechnoSale.DataAccess.Concrete.EntityFramework;
+using TechnoSale.MvcWebUI.Entities;
 using TechnoSale.MvcWebUI.Middlewares;
 using TechnoSale.MvcWebUI.Services;
 
@@ -29,6 +32,12 @@ namespace TechnoSale.MvcWebUI
             services.AddScoped<IKategoriDal, EfKategoriDal>();
             services.AddSingleton<ICartSessionService, CartSessionService>();
             services.AddSingleton<ICartService, CartService>();
+            services.AddDbContext<CustomIdentityDbContext>
+            (options => options.UseSqlServer(
+                "Server=(localdb)\\mssqllocaldb;Database=alisveris;Trusted_Connection=true"));
+            services.AddIdentity<CustomIdentityUser, CustomIdentityRole>()
+                .AddEntityFrameworkStores<CustomIdentityDbContext>()
+                .AddDefaultTokenProviders();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSession();
             services.AddDistributedMemoryCache();
@@ -45,6 +54,7 @@ namespace TechnoSale.MvcWebUI
 
             app.UseFileServer();
             app.UseNodeModules(env.ContentRootPath);
+            app.UseIdentity();
             app.UseSession();
             app.UseMvcWithDefaultRoute();
         }
